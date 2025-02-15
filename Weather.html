@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w{
+           background-image: linear-gradient(red,white);
+           height: 300px;
+           width: 250px;
+           border-radius: 10px;
+           font-weight: bold;
+           color: chartreuse;
+           border-color: darkred;
+           border-style: double;
+           margin-left: 525px;
+           margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="w">
+       <h1> Weather App</h1>
+
+   Enter your city : <input type="text" id="city">
+    <button onclick="getWeather()">Q</button><br><br>
+    <span id="sp1"></span><br><br>
+    <span id="sp2"></span><br><br>
+    <span id="sp3"></span><br><br>
+    <span id="sp4"></span><br><br>
+    </div>
+    <script>
+          async function getWeather(){
+            var city = document.getElementById("city").value;
+            var api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5760fd2b56df38275f29a81302c3deb8`;
+            var d = await fetch(api);
+            var data = await d.json();
+            document.getElementById("sp1").innerHTML=  Math.round(data.main.temp-273);
+          }
+
+          //Hoiting
+           //console.log(x);  X
+          //var x = 30;
+
+    </script>
+</body>
+</html>
