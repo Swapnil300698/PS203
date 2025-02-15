@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #out{
+            background-color: red;
+            width: 300px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+   User Name : <input type="text" id="u">
+    Password :<input type="text" id="p">
+    <button onclick="login()">submit</button>
+    <span id="out"></span>
+    <script>
+        function login(){
+            var u = ["Swapnil","Sahil","Ankush", "Tanvi","Akshada","Anjali"];
+            var p = ["Swapnil123","Sahil123","Ankush123", "Tanvi123","Akshada123","Anjali123"];
+            var user = document.getElementById("u").value;
+            var pass = document.getElementById("p").value;
+            for(var i =0;i<u.length;i++){
+                
+            if(u[i]==user && p[i]==pass){
+                var sp =  document.getElementById("out");
+               sp.innerHTML = "Logined.....";
+               sp.style.backgroundColor = 'green';
+            }
+            else{
+                var sp =document.getElementById("out");
+                sp.innerHTML = "Failed..." ;   
+                sp.style.backgroundColor = 'red';
+            }
+        }
+        }
+    </script>
+</body>
+</html>
